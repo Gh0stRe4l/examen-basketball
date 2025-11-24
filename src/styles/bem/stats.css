@@ -1,0 +1,39 @@
+.stats {
+  margin: 20px 0;
+}
+
+.stats__card {
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stats__item {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.stats__label {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.stats__value {
+  font-weight: bold;
+}

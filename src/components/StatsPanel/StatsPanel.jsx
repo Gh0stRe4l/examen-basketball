@@ -1,42 +1,54 @@
 // src/components/StatsPanel/StatsPanel.jsx
 
-import React from "react";
-import "../../styles/global.css";
+import React, { useMemo } from "react";
+import "../../styles/bem/stats.css";
 
 export default function StatsPanel({ players }) {
-  if (!players || players.length === 0) return null;
+  const stats = useMemo(() => {
+    if (players.length === 0) return null;
 
-  const totalPlayers = players.length;
-  const avgPoints = (players.reduce((a, b) => a + b.points, 0) / totalPlayers).toFixed(1);
-  const avgAssists = (players.reduce((a, b) => a + b.assists, 0) / totalPlayers).toFixed(1);
-  const avgRebounds = (players.reduce((a, b) => a + b.rebounds, 0) / totalPlayers).toFixed(1);
+    const avg = (key) =>
+      (players.reduce((sum, p) => sum + p[key], 0) / players.length).toFixed(1);
+
+    return {
+      count: players.length,
+      avgPoints: avg("points"),
+      avgAssists: avg("assists"),
+      avgRebounds: avg("rebounds"),
+    };
+  }, [players]);
+
+  if (!stats) return null;
 
   return (
-    <div className="stats-panel">
-      <h2 className="stats-panel__title">📊 Estadísticas Globales</h2>
+    <div className="stats">
+      <div className="stats__card">
+        <h3 className="stats__title">Estadísticas Generales</h3>
 
-      <div className="stats-panel__grid">
-        <div className="stats-panel__card">
-          <h3>{totalPlayers}</h3>
-          <p>Jugadores Totales</p>
-        </div>
+        <div className="stats__grid">
+          <div className="stats__item">
+            <span className="stats__label">Jugadores:</span>
+            <span className="stats__value">{stats.count}</span>
+          </div>
 
-        <div className="stats-panel__card">
-          <h3>{avgPoints}</h3>
-          <p>Promedio de Puntos</p>
-        </div>
+          <div className="stats__item">
+            <span className="stats__label">Promedio PTS:</span>
+            <span className="stats__value">{stats.avgPoints}</span>
+          </div>
 
-        <div className="stats-panel__card">
-          <h3>{avgAssists}</h3>
-          <p>Promedio de Asistencias</p>
-        </div>
+          <div className="stats__item">
+            <span className="stats__label">Promedio AST:</span>
+            <span className="stats__value">{stats.avgAssists}</span>
+          </div>
 
-        <div className="stats-panel__card">
-          <h3>{avgRebounds}</h3>
-          <p>Promedio de Rebotes</p>
+          <div className="stats__item">
+            <span className="stats__label">Promedio REB:</span>
+            <span className="stats__value">{stats.avgRebounds}</span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
