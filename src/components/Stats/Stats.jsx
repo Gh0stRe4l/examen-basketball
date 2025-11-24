@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/bem/stats.css";
+import "../../styles/bem/stats.css";
 
 const Stats = ({ totalItems, filteredItems, lastSearch }) => {
   return (
