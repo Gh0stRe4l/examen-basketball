@@ -1,14 +1,28 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.table__cell,
-.table__cell--head {
+.table__head {
+  background: var(--color-card);
+}
+
+.table__header {
   padding: 10px;
-  border: 1px solid #ccc;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table__row {
+  background: var(--color-card);
+  border-bottom: 1px solid #ddd;
 }
 
 .table__row:hover {
-  background: #f0f0f0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.table__cell {
+  padding: 10px;
 }

@@ -1,0 +1,44 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-text: #222;
+  --color-primary: #0059ff;
+  --color-card: #fff;
+}
+
+body.dark {
+  --color-bg: #1a1a1a;
+  --color-text: #e6e6e6;
+  --color-card: #2c2c2c;
+}
+
+/* Layout del Dashboard */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard__left {
+  flex: 2;
+}
+
+.dashboard__right {
+  flex: 1;
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 10px;
+}

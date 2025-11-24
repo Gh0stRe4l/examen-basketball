@@ -1,12 +1,13 @@
-.theme__toggle {
-  padding: 8px 14px;
-  border-radius: 6px;
+.theme-toggle {
+  padding: 10px 15px;
+  background: var(--color-card);
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  background: #222;
-  color: white;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.dark-mode {
-  background: #111;
-  color: white;
+.theme-toggle:hover {
+  transform: scale(1.05);
 }
