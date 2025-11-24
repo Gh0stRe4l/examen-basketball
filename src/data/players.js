@@ -1,12 +1,74 @@
 export const players = [
-  { id: 1, name: "LeBron James", team: "Lakers", age: 39, points: 28, assists: 8, rebounds: 7 },
-  { id: 2, name: "Stephen Curry", team: "Warriors", age: 36, points: 30, assists: 6, rebounds: 5 },
-  { id: 3, name: "Kevin Durant", team: "Suns", age: 35, points: 27, assists: 5, rebounds: 7 },
-  { id: 4, name: "Giannis Antetokounmpo", team: "Bucks", age: 30, points: 29, assists: 5, rebounds: 11 },
-  { id: 5, name: "Nikola Jokic", team: "Nuggets", age: 29, points: 26, assists: 9, rebounds: 12 },
-  { id: 6, name: "Luka Doncic", team: "Mavericks", age: 25, points: 32, assists: 9, rebounds: 8 },
-  { id: 7, name: "Jayson Tatum", team: "Celtics", age: 26, points: 27, assists: 4, rebounds: 8 },
-  { id: 8, name: "Jimmy Butler", team: "Heat", age: 35, points: 23, assists: 5, rebounds: 6 },
-  { id: 9, name: "Kyrie Irving", team: "Mavericks", age: 32, points: 25, assists: 6, rebounds: 5 },
-  { id: 10, name: "Joel Embiid", team: "76ers", age: 30, points: 33, assists: 4, rebounds: 10 }
+  {
+    id: 1,
+    name: "LeBron James",
+    age: 39,
+    team: "Los Angeles Lakers",
+    position: "SF",
+    height: 206,
+    points: 27.1,
+    assists: 7.4,
+    rebounds: 7.3,
+    img: "https://i.imgur.com/VH1JzY2.png"
+  },
+  {
+    id: 2,
+    name: "Stephen Curry",
+    age: 36,
+    team: "Golden State Warriors",
+    position: "PG",
+    height: 188,
+    points: 29.4,
+    assists: 6.3,
+    rebounds: 5.1,
+    img: "https://i.imgur.com/JXJ9Z3N.png"
+  },
+  {
+    id: 3,
+    name: "Kevin Durant",
+    age: 35,
+    team: "Phoenix Suns",
+    position: "SF",
+    height: 210,
+    points: 27.2,
+    assists: 5.3,
+    rebounds: 7.1,
+    img: "https://i.imgur.com/3whG2bU.png"
+  },
+  {
+    id: 4,
+    name: "Giannis Antetokounmpo",
+    age: 30,
+    team: "Milwaukee Bucks",
+    position: "PF",
+    height: 211,
+    points: 28.9,
+    assists: 5.6,
+    rebounds: 11.2,
+    img: "https://i.imgur.com/6lCLg2Q.png"
+  },
+  {
+    id: 5,
+    name: "Nikola Jokic",
+    age: 29,
+    team: "Denver Nuggets",
+    position: "C",
+    height: 211,
+    points: 26.4,
+    assists: 9.0,
+    rebounds: 12.1,
+    img: "https://i.imgur.com/fIzOS8o.png"
+  },
+  {
+    id: 6,
+    name: "Luka Doncic",
+    age: 25,
+    team: "Dallas Mavericks",
+    position: "PG",
+    height: 201,
+    points: 33.6,
+    assists: 9.8,
+    rebounds: 9.2,
+    img: "https://i.imgur.com/dcsJg8F.png"
+  }
 ];
