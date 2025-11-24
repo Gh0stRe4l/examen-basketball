@@ -3,6 +3,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .searchbar__input {
@@ -25,8 +26,7 @@
   font-size: 14px;
 }
 
-/* ⬇️ Agrega aquí el bloque nuevo ⬇️ */
-
+/* Historial */
 .searchbar__history {
   margin-top: 10px;
 }

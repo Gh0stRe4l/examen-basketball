@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .modal {
@@ -12,6 +13,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 350px;
+  max-width: 90%;
 }
 
 .modal__header {
@@ -26,6 +28,7 @@
   padding: 6px 10px;
   color: white;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .modal__img {
@@ -36,4 +39,6 @@
 
 .modal__stats {
   list-style: none;
+  padding: 0;
 }
+

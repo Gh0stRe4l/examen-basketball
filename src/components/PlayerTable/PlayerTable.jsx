@@ -1,40 +1,49 @@
 // src/components/PlayerTable/PlayerTable.jsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "../../styles/bem/table.css";
 
-export default function PlayerTable({ players }) {
-  const navigate = useNavigate();
-
+export default function PlayerTable({ players, onSelect }) {
   return (
-    <table className="table">
-      <thead className="table__head">
-        <tr className="table__row table__row--head">
-          <th className="table__cell table__cell--head">Nombre</th>
-          <th className="table__cell table__cell--head">Equipo</th>
-          <th className="table__cell table__cell--head">Edad</th>
-          <th className="table__cell table__cell--head">PTS</th>
-          <th className="table__cell table__cell--head">AST</th>
-          <th className="table__cell table__cell--head">REB</th>
+    <table className="player-table">
+      <thead className="player-table__head">
+        <tr>
+          <th className="player-table__header">Foto</th>
+          <th className="player-table__header">Nombre</th>
+          <th className="player-table__header">Edad</th>
+          <th className="player-table__header">Equipo</th>
+          <th className="player-table__header">Posición</th>
         </tr>
       </thead>
-      <tbody className="table__body">
-        {players.map((player) => (
+      <tbody>
+        {players.map(player => (
           <tr
             key={player.id}
-            onClick={() => navigate(`/players/${player.id}`)}
+            className="player-table__row"
+            onClick={() => onSelect(player)}
             style={{ cursor: "pointer" }}
-            className="table__row"
           >
-            <td className="table__cell">{player.name}</td>
-            <td className="table__cell">{player.team}</td>
-            <td className="table__cell">{player.age}</td>
-            <td className="table__cell">{player.pts}</td>
-            <td className="table__cell">{player.ast}</td>
-            <td className="table__cell">{player.reb}</td>
+            <td className="player-table__cell">
+              <img
+                src={player.img}
+                alt={player.name}
+                className="player-table__img"
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  objectFit: "cover",
+                  borderRadius: "50%"
+                }}
+              />
+            </td>
+            <td className="player-table__cell">{player.name}</td>
+            <td className="player-table__cell">{player.age}</td>
+            <td className="player-table__cell">{player.team}</td>
+            <td className="player-table__cell">{player.position}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 }
+
+
+
