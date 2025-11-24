@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar/SearchBar";
 import PlayerTable from "./components/PlayerTable/PlayerTable";
 import StatsPanel from "./components/StatsPanel/StatsPanel";
@@ -22,6 +22,26 @@ export default function App() {
   const playersPerPage = 4;
 
   const [history, setHistory] = useState([]);
+
+  // 🌙 Estado del tema (modo claro/oscuro)
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  const toggleTheme = () => {
+    setDarkMode((prev) => !prev);
+  };
+
+  // 🌙 Aplicar el tema al <body> + guardar en localStorage
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const filteredPlayers = playersData.filter((p) =>
     p.name.toLowerCase().includes(debouncedSearch.toLowerCase())
@@ -48,7 +68,9 @@ export default function App() {
 
   return (
     <div className="container">
-      <ThemeToggle />
+
+      {/* 🌙 Botón de tema con props */}
+      <ThemeToggle darkMode={darkMode} onToggle={toggleTheme} />
 
       <StatsPanel players={filteredPlayers} />
 
