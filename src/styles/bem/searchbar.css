@@ -24,3 +24,33 @@
 .searchbar__results {
   font-size: 14px;
 }
+
+/* ⬇️ Agrega aquí el bloque nuevo ⬇️ */
+
+.searchbar__history {
+  margin-top: 10px;
+}
+
+.searchbar__history-title {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.searchbar__history-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.searchbar__history-item {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: var(--color-card);
+  transition: 0.2s;
+}
+
+.searchbar__history-item:hover {
+  transform: scale(1.05);
+}
