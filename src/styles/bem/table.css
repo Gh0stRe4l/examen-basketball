@@ -1,0 +1,14 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__cell,
+.table__cell--head {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.table__row:hover {
+  background: #f0f0f0;
+}

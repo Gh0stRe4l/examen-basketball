@@ -1,0 +1,12 @@
+.theme__toggle {
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #222;
+  color: white;
+}
+
+.dark-mode {
+  background: #111;
+  color: white;
+}

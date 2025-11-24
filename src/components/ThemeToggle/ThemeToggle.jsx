@@ -1,7 +1,13 @@
-export default function ThemeToggle() {
+import React from "react";
+import "../../styles/bem/theme.css";
+
+export default function ThemeToggle({ darkMode, setDarkMode }) {
   return (
-    <div className="theme-toggle">
-      ThemeToggle
-    </div>
+    <button
+      className="theme__toggle"
+      onClick={() => setDarkMode(!darkMode)}
+    >
+      {darkMode ? "🌙 Dark" : "☀️ Light"}
+    </button>
   );
 }
