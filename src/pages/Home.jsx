@@ -1,5 +1,4 @@
 // src/pages/Home.jsx
-
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import PlayerTable from "../components/PlayerTable/PlayerTable";
@@ -26,14 +25,17 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const toggleTheme = () => setDarkMode((prev) => !prev);
 
+  // Filtrado de jugadores según búsqueda
   const filteredPlayers = playersData.filter((p) =>
     p.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
+  // Paginación
   const indexOfLast = currentPage * playersPerPage;
   const indexOfFirst = indexOfLast - playersPerPage;
   const currentPlayers = filteredPlayers.slice(indexOfFirst, indexOfLast);
 
+  // Manejo de búsqueda
   const handleSearchChange = (value) => {
     setSearch(value);
 
@@ -51,10 +53,17 @@ export default function Home() {
 
   return (
     <div className={`container ${darkMode ? "dark-mode" : ""}`}>
+      {/* Toggle de tema */}
       <ThemeToggle darkMode={darkMode} onToggle={toggleTheme} />
 
-      <Stats players={filteredPlayers} />
+      {/* Estadísticas */}
+      <Stats
+        totalItems={playersData.length}
+        filteredItems={filteredPlayers.length}
+        lastSearch={debouncedSearch}
+      />
 
+      {/* Barra de búsqueda */}
       <SearchBar
         value={search}
         onChange={handleSearchChange}
@@ -62,10 +71,13 @@ export default function Home() {
         resultsCount={filteredPlayers.length}
       />
 
+      {/* Historial de búsqueda */}
       <SearchHistory history={history} onSelect={(v) => setSearch(v)} />
 
+      {/* Tabla de jugadores */}
       <PlayerTable players={currentPlayers} onSelect={openPlayerModal} />
 
+      {/* Paginación */}
       <Pagination
         currentPage={currentPage}
         total={filteredPlayers.length}
@@ -73,6 +85,7 @@ export default function Home() {
         onChange={(page) => setCurrentPage(page)}
       />
 
+      {/* Modal de jugador seleccionado */}
       {selectedPlayer && (
         <Modal player={selectedPlayer} onClose={closePlayerModal} />
       )}
